@@ -1,0 +1,76 @@
+@import "reveal-js/css/theme/template/mixins";
+@import "reveal-js/css/theme/template/settings";
+
+
+// Include theme-specific fonts
+@import url(reveal-js/lib/font/source-sans-pro/source-sans-pro.css);
+
+// $backgroundColor: #fff;
+
+// $mainColor: #000;
+// $headingColor: #111;
+
+$mainFontSize: 2em;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingLetterSpacing: normal;
+$headingFontWeight: 600;
+$linkColor: #2690e7;
+$linkColorHover: lighten( $linkColor, 25% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+@import "reveal-js/css/theme/template/theme";
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #222;
+	}
+}
+
+.reveal pre {
+	margin: 1em auto;
+}
+
+.reveal strong,
+.reveal b {
+	font-weight: bold;
+	color: #b81f0b
+}
+
+.reveal em {
+	font-style: italic;
+	color: #039418
+}
+
+.reveal section img {
+	border: 0em;
+	box-shadow: none;
+}
+
+.reveal code {
+	color: rgb(209, 28, 124);
+	line-height: 140%;
+	// font-size: 130%;
+	font-family: "Oxygen Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+}
+
+.reveal pre code {
+	color: black;
+}
+
+.reveal h3 {
+	margin: .5em 0 0;
+}
+
+.reveal ul {
+	margin: .2em .2em .2em;
+}
+
+.gist-it-gist .gist-file .gist-data pre, .gister-gist .gist-file .gist-data pre {
+	box-shadow: none !important;
+}

@@ -1,0 +1,43 @@
+baseURL = "https://danysk.github.io/"
+languageCode = "en-us"
+title = "A Hugo theme for creating Reveal.js presentations"
+disableKinds = ["sitemap", "RSS"]
+theme = "reveal-hugo"
+publishDir = "build"
+
+# uncomment for browsing at file:///
+# relativeURLs = true
+# uglyURLs = true
+
+[author]
+name = "Danilo Pianini"
+
+# currently only the unsafe mode for goldmark is supported
+[markup.goldmark.renderer]
+unsafe = true
+
+# choose between Hugo compile-time or Highlight.js
+# syntax highlighting for code inside of code fences
+[markup.highlight]
+codeFences = false  # use highlight.js 
+# codeFences = true  # use hugo highlighting at compile time
+style = "tango"  # set a style for hugo highlighting
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
+[params.reveal_hugo]
+history = true
+theme = "league"
+highlight_theme = "solarized-dark"
+slide_number = true
+transition = "slide"
+transition_speed = "fast"
+custom_theme = "custom-theme.scss"
+custom_theme_compile = true
+
+[params.reveal_hugo.custom_theme_options]
+targetPath = "css/custom-theme.css"
+enableSourceMap = true
