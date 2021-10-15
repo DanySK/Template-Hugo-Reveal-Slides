@@ -21,10 +21,6 @@ jobs:
       # Checkout the repository
       - name: Checkout
         uses: danysk/action-checkout@0.1.0
-      - name: Update package list
-        run: sudo apt-get update -y
-      - name: Install Chromium
-        run: sudo apt-get install -y chromium-browser
       - name: Download Hugo
         run: wget --retry-connrefused --waitretry=1 --read-timeout=20 https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb --output-document=hugo.deb
         env:
