@@ -1,4 +1,4 @@
-baseURL = "https://danysk.github.io/"
+baseURL = "https://danysk.github.io/Template-Hugo-Reveal-Slides"
 languageCode = "en-us"
 title = "A Hugo theme for creating Reveal.js presentations"
 disableKinds = ["sitemap", "RSS"]
