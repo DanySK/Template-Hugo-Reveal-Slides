@@ -20,7 +20,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout
-        uses: danysk/action-checkout@0.1.0
+        uses: danysk/action-checkout@0.2.1
       - name: Download Hugo
         run: wget --retry-connrefused --waitretry=1 --read-timeout=20 https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb --output-document=hugo.deb
         env:
