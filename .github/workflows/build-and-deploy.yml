@@ -21,10 +21,24 @@ jobs:
       # Checkout the repository
       - name: Checkout
         uses: danysk/action-checkout@0.2.1
+      - name: Compute the version of Hugo
+        id: hugo
+        shell: bash
+        run: |
+          # Idea: the regex matcher of Renovate keeps this string up to date automatically
+          # The version is extracted and used to access the correct version of the scripts
+          USES=$(cat <<TRICK_RENOVATE
+          - uses: gohugoio/hugo@v0.92.1
+          TRICK_RENOVATE
+          )
+          echo "Scripts update line: \"$USES\""
+          echo "Computed version: \"${USES#*@}\""
+          echo "::set-output name=version::${USES#*@}"
       - name: Download Hugo
-        run: wget --retry-connrefused --waitretry=1 --read-timeout=20 https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb --output-document=hugo.deb
-        env:
-          HUGO_VERSION: "0.91.2"
+        run: |
+          HUGO_VERSION="${{ steps.hugo.outputs.version }}"
+          URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb"
+          wget --retry-connrefused --waitretry=1 --read-timeout=20 "$URL" --output-document=hugo.deb
       - name: List files
         run: ls -ahl
       - name: Install Hugo
