@@ -32,8 +32,8 @@ jobs:
           TRICK_RENOVATE
           )
           echo "Scripts update line: \"$USES\""
-          echo "Computed version: \"${USES#*@}\""
-          echo "::set-output name=version::${USES#*@}"
+          echo "Computed version: \"${USES#*@v}\""
+          echo "::set-output name=version::${USES#*@v}"
       - name: Download Hugo
         run: |
           HUGO_VERSION="${{ steps.hugo.outputs.version }}"
