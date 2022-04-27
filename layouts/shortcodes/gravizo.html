@@ -1,7 +1,11 @@
 {{ $title := "" }}
+{{ $width := "100" }}
 {{ if .IsNamedParams }}
   {{ with .Get "title" }}
     {{ $title = . }}
+  {{ end }}
+  {{ with .Get "width" }}
+    {{ $width = . }}
   {{ end }}
 {{ else }}
   {{ with .Get 0 }}
@@ -11,8 +15,9 @@
 
 <figure>
   <img
-    src='https://g.gravizo.com/svg?{{ .Inner }}'
+    src='https://g.gravizo.com/svg?{{ .Inner | replaceRE "[\\n\\r]+\\s*" "\n" }}'
     alt='{{ $title  }}'
+    width="{{ $width }}%"
     />
-    <figcaption>{{ $title  }}</figcaption>
+    <figcaption>{{ $title }}</figcaption>
 </figure>
