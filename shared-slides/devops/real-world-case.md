@@ -1,0 +1,244 @@
+# A real-world test case
+
+We applied DevOps (and microservice-ification) to an existing software project,
+measuring some metrics *before* and *after* the operation.
+
+* The detailed *experience report* has been presented at the 37th International Conference on Software Maintenance and Evolution ([ICSME 2021](https://icsme2021.github.io/)) 
+    * [Scientific paper](https://doi.org/10.1109/ICSME52107.2021.00051)
+
+---
+
+{{% youtube 6qd6GG3XQXA %}}
+
+---
+
+## The target
+
+### Maggioli S.p.A
+
+* *Multinational*, based in Italy
+* *~2000 collaborators* at the time of writing
+* An *internal IT/Operations* team
+* Our target team was composed of **five people**
+
+
+### sisred (before intervention)
+
+* *Client-server* stand-alone application
+* *Delphi* front-end, *Microsoft SQL Server* backend
+* Editors (paid by Maggioli) are *experts in law entering information on the client*
+* The information is then exposed into a (paid access) *portal* with up-to-date legal information
+
+---
+
+## Previous architecture
+
+
+![old-arch](https://raw.githubusercontent.com/DanySK/shared-slides/5ce02c62aae276e3f718d4e38bc3056d6e9009eb/devops/sisred-old-arch.svg)
+
+---
+
+#
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | 
+| Commit to release time (hours) |   [8 to 24]() | 
+| Commits per day ($\frac{commits}{day}$) | [2]() | 
+| MTTR (hours) | [36]() | 
+| Prod. env. setup (working hours) | [16]() | 
+| Dev. env. setup (minutes) | [120]() |
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+
+---
+
+## Microservice-ified architecture
+
+![new-arch](https://raw.githubusercontent.com/DanySK/shared-slides/5ce02c62aae276e3f718d4e38bc3056d6e9009eb/devops/sisred-new-arch.svg)
+
+---
+
+## CI Pipeline
+
+![pipeline](https://raw.githubusercontent.com/DanySK/shared-slides/5ce02c62aae276e3f718d4e38bc3056d6e9009eb/devops/docker-publish.svg)
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | 
+| Commits per day ($\frac{commits}{day}$) | [2]() | 
+| MTTR (hours) | [36]() | 
+| Prod. env. setup (working hours) | [16]() | 
+| Dev. env. setup (minutes) | [120]() |
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | 
+| MTTR (hours) | [36]() | 
+| Prod. env. setup (working hours) | [16]() | 
+| Dev. env. setup (minutes) | [120]() |
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+
+---
+
+{{< slide transition="none" >}}
+
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | 
+| Prod. env. setup (working hours) | [16]() | 
+| Dev. env. setup (minutes) | [120]() |
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | *0.5* | **-98.6%**
+| Prod. env. setup (working hours) | [16]() | 
+| Dev. env. setup (minutes) | [120]() |
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | *0.5* | **-98.6%**
+| Prod. env. setup (working hours) | [16]() | *0.35* | **-97.8%**
+| Dev. env. setup (minutes) | [120]() |
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | *0.5* | **-98.6%**
+| Prod. env. setup (working hours) | [16]() | *0.35* | **-97.8%**
+| Dev. env. setup (minutes) | [120]() | *9* | **-92.5%**
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | 
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | *0.5* | **-98.6%**
+| Prod. env. setup (working hours) | [16]() | *0.35* | **-97.8%**
+| Dev. env. setup (minutes) | [120]() | *9* | **-92.5%**
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | *0* | **-100%**
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | 
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | *0.5* | **-98.6%**
+| Prod. env. setup (working hours) | [16]() | *0.35* | **-97.8%**
+| Dev. env. setup (minutes) | [120]() | *9* | **-92.5%**
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | *0* | **-100%**
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | *19* | **-52.5%**
+| Issue resolution time (days) | [4]() |  | 
+
+---
+
+{{< slide transition="none" >}}
+
+| Metric         | Prev.           | Now  | Change |
+| :-------------|:-------------:| :-----:| ---: |
+| Release frequency ($\frac{releases}{day}$) | [0.071]() | *2.7* | **+3700%**
+| Commit to release time (hours) |   [8 to 24]() | *0.19* | **~ -98.5%**
+| Commits per day ($\frac{commits}{day}$) | [2]() | *7.1* | **+255%**
+| MTTR (hours) | [36]() | *0.5* | **-98.6%**
+| Prod. env. setup (working hours) | [16]() | *0.35* | **-97.8%**
+| Dev. env. setup (minutes) | [120]() | *9* | **-92.5%**
+| Nightly downtime ($\frac{minutes}{night}$) | [30]() | *0* | **-100%**
+| Support ticket frequency ($\frac{tickets}{month}$) | [40]() | *19* | **-52.5%**
+| Issue resolution time (days) | [4]() | *3* | **-25%**
+
+---
+
+## Benefits
+
+* Much less **maintenance** in the traditional meaning: *"Time spent to keep the system in nominal conditions"*
+    * No more issues with Windows updates
+    * No more downtimes related to internal network / electricity / public infrastructure maintenance
+    * Improved security
+    * No more critical failures caused by testing stored procedures directly in production by mistake
+* Much more maintenance in terms of *software evolution*
+    * Application (or verification of automatic application) of updates
+    * Security audits
+    * Maintenance and update of the pipeline
+
+---
+
+## Lessons learned
+
+* The teams must be **autonomous**
+* Practices must be *tailored* to the team
+* Time-consuming, repetitive, and cumbersome procedures must be *automated*
+* Obsolete practices must be *removed*
+* **Communication** is key, awareness must be shed across the team of the expected benefits
+
+---
+
+## Timeline
+
+![timeline](https://raw.githubusercontent.com/DanySK/shared-slides/e9333dc0a24019ebc2ee0e30319e778e38519bfb/devops/timeline.svg)
+
