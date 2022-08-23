@@ -3,3 +3,4 @@ build/
 _gen/
 *.pdf
 *.hprof
+*build.lock
