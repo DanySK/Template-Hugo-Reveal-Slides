@@ -1,5 +1,5 @@
 {{- $path := .Get "path" -}}
-{{- $content := readFile $path | htmlUnescape -}}
+{{- $content := readFile $path | htmlUnescape | markdownify -}}
 {{- $content := split $content "\n" -}}
 {{- $start := .Get "from" | default "1" | int | add -1 }}
 {{- $end := .Get "to" | default (len $content) | int }}
