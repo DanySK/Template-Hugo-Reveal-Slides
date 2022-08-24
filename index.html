@@ -9,14 +9,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/reveal-js/css/reset.css">
-<link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/reveal-js/css/reveal.css">
-  <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/css/custom-theme.min.d1061947a4066cda6d0aba276caec46a65f4d0e6c23bb121123475b8bd0b1669.css" id="theme"><link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/highlight-js/solarized-dark.min.css">
+    <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/reveal-js/dist/reset.css">
+<link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/reveal-js/dist/reveal.css">
+  <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/css/custom-theme.min.18a0d71c0875529c96f655d4bf0e5e206d40116ed470c802b3d095f817a904f5.css" id="theme"><link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/highlight-js/solarized-dark.min.css">
     
 <link rel="stylesheet" href="https://gitcdn.link/repo/DanySK/css-blur-animation/master/blur.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Oxygen Mono' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Ubuntu Mono' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
   </head>
   <body>
@@ -191,17 +192,15 @@
 <p>$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$</p>
 </section><section>
 <h1 id="code-snippets">Code snippets</h1>
-<pre><code class="language-kotlin">val x = pippo
-</code></pre>
-<pre><code class="language-go">package main
- 
-import &quot;fmt&quot;
- 
-func main() {
-    fmt.Println(&quot;Hello world!&quot;)
-}
-</code></pre>
-</section><section>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">val</span> <span style="color:#000">x</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">pippo</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="nohighlight" data-noescape><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello world!&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div></section><section>
 <h1 id="tables">Tables</h1>
 <p>Colons can be used to align columns.</p>
 <table>
@@ -254,15 +253,18 @@ joined</p>
 <li><span class='fragment '
   >
   pluto
-</span></li>
+</span>
+</li>
 <li><span class='fragment '
   >
   pluto
-</span></li>
+</span>
+</li>
 <li><span class='fragment '
   >
   pluto
-</span></li>
+</span>
+</li>
 </ul>
 </section><section>
 <h1 id="graphs-via-gravizo">Graphs via Gravizo</h1>
@@ -286,8 +288,9 @@ joined</p>
 </section><section>
 <h1 id="graphs-via-mermaidjs">Graphs via mermaid.js</h1>
 <div class="mermaid">
+%%{init: {'theme':'default', 'themeVariables': { 'fontSize': '1', 'fontFamily': 'verdana' }}}%%
 classDiagram
-  Class01 <|-- AveryLongClass : Cool
+  Class01 <|-- AveryLongClass : Coosssl
   Class03 *-- Class04
   Class05 o-- Class06
   Class07 .. Class08
@@ -298,11 +301,21 @@ classDiagram
   Class07 : Object[] elementData
   Class01 : size()
   Class01 : int chimp
-  Class01 : int gorilla
+  Class01 : int gorillasaaaaaaaaaaaaaaaaaaaaaa
   Class08 <--> C2: Cool label
 
 </div>
 
+
+</section><section>
+<h1 id="graphs-via-mermaidjs-2">Graphs via mermaid.js 2</h1>
+<div class="mermaid">graph TD
+  SL([fa:fa-user second level]) --> L[solution]
+  L -- solution email --> db[(mysql)]
+  db --> X[automatic] 
+  X --> CM([fa:fa-users first level])
+  db -- Email --> c([customer support]);
+</div>
 
 </section><section>
 <h1 id="import-of-shared-slides">Import of shared slides</h1>
@@ -420,20 +433,29 @@ classDiagram
     </div>
 <script type="text/javascript" src=/Template-Hugo-Reveal-Slides/reveal-hugo/object-assign.js></script>
 
-<a href="/Template-Hugo-Reveal-Slides/reveal-js/css/print/" id="print-location" style="display: none;"></a>
-<script type="text/javascript">
-  var printLocationElement = document.getElementById('print-location');
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
-  document.getElementsByTagName('head')[0].appendChild(link);
-</script>
+<a href="/Template-Hugo-Reveal-Slides/reveal-js/dist/print/" id="print-location" style="display: none;"></a>
 
 <script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"900","highlight_theme":"solarized-dark","history":true,"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1440"}</script>
 <script type="application/json" id="reveal-hugo-page-params">null</script>
 
-<script src="/Template-Hugo-Reveal-Slides/reveal-js/js/reveal.js"></script>
+<script src="/Template-Hugo-Reveal-Slides/reveal-js/dist/reveal.js"></script>
+
+
+  
+  
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/markdown/marked.js"></script>
+  
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/zoom-js/zoom.js"></script>
+  
+  
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/notes/notes.js"></script>
+
+
+
 
 <script type="text/javascript">
   
@@ -452,30 +474,20 @@ classDiagram
   }
   
   var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+
+  var revealHugoPlugins = { 
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+   };
   var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
   var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
   
   var options = Object.assign({},
     camelize(revealHugoDefaults),
     camelize(revealHugoSiteParams),
-    camelize(revealHugoPageParams));
+    camelize(revealHugoPageParams),
+    camelize(revealHugoPlugins));
   Reveal.initialize(options);
 </script>
-
-
-  
-  
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/markdown/marked.js"></script>
-  
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/markdown/markdown.js"></script>
-  
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/highlight/highlight.js"></script>
-  
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/zoom-js/zoom.js"></script>
-  
-  
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/notes/notes.js"></script>
-
 
 
 
