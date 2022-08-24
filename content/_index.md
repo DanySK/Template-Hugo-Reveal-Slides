@@ -242,8 +242,9 @@ raw Markdown line up prettily. You can also use inline Markdown.
 # Graphs via mermaid.js
 
 {{< mermaid >}}
+%%{init: {'theme':'default', 'themeVariables': { 'fontSize': '1', 'fontFamily': 'verdana' }}}%%
 classDiagram
-  Class01 <|-- AveryLongClass : Cool
+  Class01 <|-- AveryLongClass : Coosssl
   Class03 *-- Class04
   Class05 o-- Class06
   Class07 .. Class08
@@ -254,9 +255,23 @@ classDiagram
   Class07 : Object[] elementData
   Class01 : size()
   Class01 : int chimp
-  Class01 : int gorilla
+  Class01 : int gorillasaaaaaaaaaaaaaaaaaaaaaa
   Class08 <--> C2: Cool label
 {{< /mermaid >}}
+
+
+---
+
+# Graphs via mermaid.js 2
+
+```mermaid
+graph TD
+  SL([fa:fa-user second level]) --> L[solution]
+  L -- solution email --> db[(mysql)]
+  db --> X[automatic] 
+  X --> CM([fa:fa-users first level])
+  db -- Email --> c([customer support]);
+```
 
 ---
 
