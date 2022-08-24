@@ -1,3 +1,6 @@
 [submodule "static/shared-slides"]
 	path = static/shared-slides
 	url = https://github.com/DanySK/shared-slides.git
+[submodule "themes/reveal-hugo"]
+	path = themes/reveal-hugo
+	url = https://github.com/cric96/reveal-hugo.git
