@@ -1,9 +1,13 @@
-@import "reveal-js/css/theme/template/mixins";
-@import "reveal-js/css/theme/template/settings";
+@import "reveal-js/dist/theme/template/mixins";
+@import "reveal-js/dist/theme/template/settings";
 
 
 // Include theme-specific fonts
-@import url(reveal-js/lib/font/source-sans-pro/source-sans-pro.css);
+// @import url('reveal-js/lib/font/source-sans-pro/source-sans-pro.css');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 
 // $backgroundColor: #fff;
 
@@ -11,8 +15,17 @@
 // $headingColor: #111;
 
 $mainFontSize: 2em;
-$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
-$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+// $mainFont: 'Roboto', sans-serif;
+// $headingFont: 'Roboto', sans-serif;
+// $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+// $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+// $mainFont: 'Ubuntu';
+// $headingFont: 'Ubuntu';
+$mainFont: 'Signika Negative';
+$headingFont: 'Signika Negative';
+// $mainFont: 'Open Sans';
+// $headingFont: 'Open Sans';
+
 $headingLetterSpacing: normal;
 $headingFontWeight: 600;
 $linkColor: #2690e7;
@@ -24,7 +37,7 @@ $heading2Size: 1.6em;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
 
-@import "reveal-js/css/theme/template/theme";
+@import "reveal-js/dist/theme/template/theme";
 
 section.has-light-background {
 	&, h1, h2, h3, h4, h5, h6 {
