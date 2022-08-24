@@ -240,5 +240,5 @@ measuring some metrics *before* and *after* the operation.
 
 ## Timeline
 
-![timeline](https://raw.githubusercontent.com/DanySK/shared-slides/e9333dc0a24019ebc2ee0e30319e778e38519bfb/devops/timeline.svg)
+![timeline](https://raw.githubusercontent.com/DanySK/shared-slides/5ce02c62aae276e3f718d4e38bc3056d6e9009eb/devops/timeline.svg)
 

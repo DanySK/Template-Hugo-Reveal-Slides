@@ -17,13 +17,13 @@
 
 # Silo mentality
 
-![silos](https://raw.githubusercontent.com/DanySK/shared-slides/62522124c1ee8be3d463291707b974ff32518d78/devops/silos.svg)
+![silos](https://raw.githubusercontent.com/DanySK/shared-slides/5ce02c62aae276e3f718d4e38bc3056d6e9009eb/devops/silos.svg)
 
 ---
 
 # **No** silos
 
-![silos](https://raw.githubusercontent.com/DanySK/shared-slides/62522124c1ee8be3d463291707b974ff32518d78/devops/no-silos.svg)
+![silos](https://raw.githubusercontent.com/DanySK/shared-slides/5ce02c62aae276e3f718d4e38bc3056d6e9009eb/devops/no-silos.svg)
 
 ---
 
