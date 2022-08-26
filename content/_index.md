@@ -275,6 +275,24 @@ graph TD
 
 ---
 
+# Graphs via mermaid.js 3
+
+```mermaid
+gitGraph
+  commit id: "Initialize project"
+  commit id: "Make some changes"
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
+```
+
+---
+
 # Import of shared slides
 
 {{% import path="static/shared-slides/devops/devops-intro.md" %}}
