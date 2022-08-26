@@ -173,16 +173,16 @@
 </section>
 
 <section data-noprocess data-shortcode-slide
-      data-background-image="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg">
+        data-background-image="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg">
   
 <h1 id="large-images-as-background">Large images as background</h1>
 <h2 id="may-affect-printing">(May affect printing)</h2>
 </section>
 
 <section data-noprocess data-shortcode-slide
-      data-background-image="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg"
-      data-state="blur-animation-light"
-      data-transition="fade-in fade-out">
+        data-background-image="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg"
+        data-state="blur-animation-light"
+        data-transition="fade-in fade-out">
   
 <h1 id="also-available-with-blur-and-custom-transitions">Also available with blur and custom transitions</h1>
 <h2 id="may-affect-printing-1">(May affect printing)</h2>
@@ -250,21 +250,9 @@ joined</p>
 </section><section>
 <h1 id="fragments">Fragments</h1>
 <ul>
-<li><span class='fragment '
-  >
-  pluto
-</span>
-</li>
-<li><span class='fragment '
-  >
-  pluto
-</span>
-</li>
-<li><span class='fragment '
-  >
-  pluto
-</span>
-</li>
+<li><span class='fragment ' >pluto</span></li>
+<li><span class='fragment ' >pluto</span></li>
+<li><span class='fragment ' >pluto</span></li>
 </ul>
 </section><section>
 <h1 id="graphs-via-gravizo">Graphs via Gravizo</h1>
@@ -458,13 +446,13 @@ classDiagram
 
   
   
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/markdown/marked.js"></script>
-  
   <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/markdown/markdown.js"></script>
   
   <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/highlight/highlight.js"></script>
   
-  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/zoom-js/zoom.js"></script>
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/zoom/zoom.js"></script>
+  
+  <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/notes/notes.js"></script>
   
   
   <script type="text/javascript" src="/Template-Hugo-Reveal-Slides/reveal-js/plugin/notes/notes.js"></script>
@@ -511,9 +499,10 @@ classDiagram
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({startOnLoad: false});
+    mermaid.initialize({"fontFamily":"Inconsolata","gitGraph":{"mainBranchName":"master","rotateCommitLabel":true},"startOnLoad":false,"theme":"default","useMaxWidth":false});
+
     let render = (event) => {
       let mermaidElems = event.currentSlide.querySelectorAll('.mermaid');
       if (!mermaidElems.length){
