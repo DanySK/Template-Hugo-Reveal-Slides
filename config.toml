@@ -43,3 +43,13 @@ height = '900'
 [params.reveal_hugo.custom_theme_options]
 targetPath = "css/custom-theme.css"
 enableSourceMap = true
+
+[[params.reveal_hugo.mermaid]]
+startOnLoad = false
+theme = "default"
+fontFamily = "Inconsolata"
+useMaxWidth = false
+
+[params.reveal_hugo.mermaid.gitGraph]
+mainBranchName = 'master'
+rotateCommitLabel = true
