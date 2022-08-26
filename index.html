@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/reveal-js/dist/reset.css">
 <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/reveal-js/dist/reveal.css">
-  <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/css/custom-theme.min.18a0d71c0875529c96f655d4bf0e5e206d40116ed470c802b3d095f817a904f5.css" id="theme"><link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/highlight-js/solarized-dark.min.css">
+  <link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/css/custom-theme.min.cfa18d04d15803a274df86ea0b17aa4e2b39ff6ce235bd585d0b6818a6a5f3e7.css" id="theme"><link rel="stylesheet" href="/Template-Hugo-Reveal-Slides/highlight-js/solarized-dark.min.css">
     
 <link rel="stylesheet" href="https://gitcdn.link/repo/DanySK/css-blur-animation/master/blur.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
@@ -318,6 +318,21 @@ classDiagram
 </div>
 
 </section><section>
+<h1 id="graphs-via-mermaidjs-3">Graphs via mermaid.js 3</h1>
+<div class="mermaid">gitGraph
+  commit id: "Initialize project"
+  commit id: "Make some changes"
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
+</div>
+
+</section><section>
 <h1 id="import-of-shared-slides">Import of shared slides</h1>
 <h1 id="development">Development</h1>
 <ul>
@@ -435,7 +450,7 @@ classDiagram
 
 <a href="/Template-Hugo-Reveal-Slides/reveal-js/dist/print/" id="print-location" style="display: none;"></a>
 
-<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"900","highlight_theme":"solarized-dark","history":true,"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1440"}</script>
+<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"900","highlight_theme":"solarized-dark","history":true,"mermaid":[{"fontFamily":"Inconsolata","gitGraph":{"mainBranchName":"master","rotateCommitLabel":true},"startOnLoad":false,"theme":"default","useMaxWidth":false}],"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1440"}</script>
 <script type="application/json" id="reveal-hugo-page-params">null</script>
 
 <script src="/Template-Hugo-Reveal-Slides/reveal-js/dist/reveal.js"></script>
