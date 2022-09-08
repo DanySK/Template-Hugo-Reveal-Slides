@@ -295,5 +295,5 @@ gitGraph
 
 # Import of shared slides
 
-{{% import path="static/shared-slides/devops/devops-intro.md" %}}
+{{% import path="shared-slides/devops/devops-intro.md" %}}
 
