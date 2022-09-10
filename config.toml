@@ -45,10 +45,10 @@ targetPath = "css/custom-theme.css"
 enableSourceMap = true
 
 [[params.reveal_hugo.mermaid]]
-startOnLoad = false
-theme = "default"
-fontFamily = "Inconsolata"
-useMaxWidth = false
+# startOnLoad = false
+# theme = "default"
+# fontFamily = "Inconsolata"
+# useMaxWidth = false
 
 # gitGraph options break the image generation
 # [params.reveal_hugo.mermaid.gitGraph]
