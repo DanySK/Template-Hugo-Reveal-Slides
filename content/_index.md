@@ -242,7 +242,7 @@ raw Markdown line up prettily. You can also use inline Markdown.
 # Graphs via mermaid.js
 
 {{< mermaid >}}
-%%{init: {'theme':'default', 'themeVariables': { 'fontSize': '1', 'fontFamily': 'verdana' }}}%%
+%%{init: {'theme':'default', 'themeVariables': { 'fontSize': '1em', 'fontFamily': 'verdana' }}}%%
 classDiagram
   Class01 <|-- AveryLongClass : Coosssl
   Class03 *-- Class04
