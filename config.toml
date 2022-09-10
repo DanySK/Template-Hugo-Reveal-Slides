@@ -50,6 +50,7 @@ theme = "default"
 fontFamily = "Inconsolata"
 useMaxWidth = false
 
-[params.reveal_hugo.mermaid.gitGraph]
-mainBranchName = 'master'
-rotateCommitLabel = true
+# gitGraph options break the image generation
+# [params.reveal_hugo.mermaid.gitGraph]
+# mainBranchName = 'master'
+# rotateCommitLabel = true
