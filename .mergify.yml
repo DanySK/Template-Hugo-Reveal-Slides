@@ -1,11 +1,4 @@
 pull_request_rules:
-  - name: Auto-rebase if appropriately labeled
-    conditions:
-      - label=auto-update-rebase
-      - -draft
-      - -conflict
-    actions:
-      rebase:
   - name: Auto-update with merge if appropriately labeled
     conditions:
       - label=auto-update-merge
