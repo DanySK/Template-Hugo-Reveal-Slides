@@ -20,7 +20,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout
-        uses: danysk/action-checkout@0.2.8
+        uses: danysk/action-checkout@0.2.9
       - name: Compute the version of Hugo
         id: hugo
         shell: bash
