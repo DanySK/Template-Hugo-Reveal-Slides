@@ -38,7 +38,7 @@ jobs:
           )
           echo "Scripts update line: \"$USES\""
           echo "Computed version: \"${USES#*@v}\""
-          echo "::set-output name=version::${USES#*@v}"
+          echo "version=${USES#*@v}" >> $GITHUB_OUTPUT
       - name: Download Hugo
         run: |
           HUGO_VERSION="${{ steps.hugo.outputs.version }}"
