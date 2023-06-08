@@ -69,8 +69,11 @@ jobs:
         uses: cric96/inline-mermaid@v1.8.1
         with:
           css-file-regex: '^css\\/.*custom.*theme.*\\.css$'
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v7
       - name: Deploy website
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ github.event_name != 'pull_request' && steps.branch-name.outputs.is_default == 'true' }}
         uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
