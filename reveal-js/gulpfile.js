@@ -164,7 +164,7 @@ function compileSass() {
 
     sass.render({
         data: transformedFile.contents.toString(),
-        includePaths: ['css/', 'css/theme/template']
+        file: transformedFile.path,
     }, ( err, result ) => {
         if( err ) {
             console.log( vinylFile.path );
@@ -298,14 +298,19 @@ gulp.task('serve', () => {
         livereload: true
     })
 
-    gulp.watch(['**/*.html', '**/*.md'], gulp.series('reload'))
+    const slidesRoot = root.endsWith('/') ? root : root + '/'
+    gulp.watch([
+        slidesRoot + '**/*.html', 
+        slidesRoot + '**/*.md',
+        `!${slidesRoot}**/node_modules/**`, // ignore node_modules
+    ], gulp.series('reload'))
 
     gulp.watch(['js/**'], gulp.series('js', 'reload', 'eslint'))
 
     gulp.watch(['plugin/**/plugin.js', 'plugin/**/*.html'], gulp.series('plugins', 'reload'))
 
     gulp.watch([
-        'css/theme/source/*.{sass,scss}',
+        'css/theme/source/**/*.{sass,scss}',
         'css/theme/template/*.{sass,scss}',
     ], gulp.series('css-themes', 'reload'))
 
