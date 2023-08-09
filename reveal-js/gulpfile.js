@@ -167,8 +167,7 @@ function compileSass() {
         file: transformedFile.path,
     }, ( err, result ) => {
         if( err ) {
-            console.log( vinylFile.path );
-            console.log( err.formatted );
+            callback(err);
         }
         else {
             transformedFile.extname = '.css';
@@ -286,7 +285,7 @@ gulp.task('package', gulp.series(() =>
 
 ))
 
-gulp.task('reload', () => gulp.src(['**/*.html', '**/*.md'])
+gulp.task('reload', () => gulp.src(['index.html'])
     .pipe(connect.reload()));
 
 gulp.task('serve', () => {
@@ -300,7 +299,7 @@ gulp.task('serve', () => {
 
     const slidesRoot = root.endsWith('/') ? root : root + '/'
     gulp.watch([
-        slidesRoot + '**/*.html', 
+        slidesRoot + '**/*.html',
         slidesRoot + '**/*.md',
         `!${slidesRoot}**/node_modules/**`, // ignore node_modules
     ], gulp.series('reload'))
