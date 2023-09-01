@@ -1,2 +1,4 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-<div class='multiCol {{ .Get "class" }}'>{{ .Inner }}</div>
+<div class="container w-100 m-0 p-0">
+    <div class='row {{ .Get "class" }}'>{{ .Inner }}</div>
+</div>
