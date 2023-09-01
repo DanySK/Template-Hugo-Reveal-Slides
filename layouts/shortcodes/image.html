@@ -1,7 +1,0 @@
-<img src="{{ .Get "src" }}" style='
-    {{ with .Get "width" }}width: {{.}}vw;{{ end }}
-    {{ with .Get "height" }}height: {{.}}vh;{{ end }}
-    max-width: {{ with .Get "max-w" }}{{.}}{{ else }}95{{ end }}vw;
-    max-height: {{ with .Get "max-h" }}{{.}}{{ else }}80{{end}}vh;
-    object-fit: contain;
-'>
