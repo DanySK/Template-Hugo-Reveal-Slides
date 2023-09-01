@@ -1,0 +1,17 @@
+{{ $w := default "100" (.Get 0) }}
+{{ $h := default "300" (.Get 1) }}
+{{ $r := ( .Inner | chomp) }}
+{{ $seed := "foo" }}
+{{ $id := delimit (shuffle (split (md5 $seed) "" )) "" }}
+
+<div style="">
+<div style="width: {{ $w }}%;height: {{ $h }}px; display: block;">
+    <canvas id="{{ $id }}"></canvas>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('{{ $id }}').getContext('2d');
+    var options = {{ $r | safeJS }};
+    new Chart(ctx, options);
+</script>
