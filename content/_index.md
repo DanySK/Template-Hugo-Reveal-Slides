@@ -76,6 +76,107 @@ Autoresize specifying
 
 ---
 
+## Multi-column slide
+
+{{% multicol %}}{{% col %}}
+Column 1
+{{% /col %}}{{% col %}}
+Column 2
+{{% /col %}}{{% /multicol %}}
+
+---
+
+## Tick and Cross
+
+{{% tick %}} This is something good {{% /tick %}}
+{{% cross %}} This is something good {{% /cross %}}
+
+---
+
+## Chart.js
+
+{{< chart >}}
+{
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'Bar Chart',
+            data: [12, 19, 18, 16, 13, 14],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+}
+{{< /chart >}}
+
+---
+
+## FontAwesome
+
+<i class="fa-solid fa-mug-hot"></i>
+<i class="fa-solid fa-lemon"></i>
+<i class="fa-solid fa-flask"></i>
+<i class="fa-solid fa-apple-whole"></i>
+<i class="fa-solid fa-bacon"></i>
+<i class="fa-solid fa-beer-mug-empty"></i>
+<i class="fa-solid fa-pepper-hot"></i>
+
+---
+
+## Bootstrap 1
+
+<div class="card w-100" >
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/View_of_Cesena_from_the_Abbey.jpg/1920px-View_of_Cesena_from_the_Abbey.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+---
+
+## Bootstrap 2
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+---
+
 ## Low res, plain markdown
 
 ![](https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg)
