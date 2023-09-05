@@ -72,7 +72,7 @@ Autoresize specifying
 * `max-w` (percent of parent element width) and/or `max-h` (percent of viewport height) as max sizes , and
 * `width` and/or `height` as *exact* sizes (as percent of viewport size)
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" max-h="20">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="20">}}
 
 ---
 
@@ -90,49 +90,49 @@ Autoresize specifying
 
 ## Low res, default
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" >}}
 
 ---
 
 ## Hi res, default
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" >}}
 
 ---
 
 ## Low res, enlarged horizontally
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" width="100">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" width="100">}}
 
 ---
 
 ## Low res, enlarged vertically
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" height="100">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" height="100">}}
 
 ---
 
 ## Hi res, reduced horizontally
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" width="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" width="50">}}
 
 ---
 
 ## Hi res, reduced vertically
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="50">}}
 
 ---
 
 ## Hi res, reducing maximum expansion horizontally
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" max-w="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" width="50">}}
 
 ---
 
 ## Hi res, reducing maximum expansion vertically
 
-{{< image src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" max-h="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="50">}}
 
 ---
 
