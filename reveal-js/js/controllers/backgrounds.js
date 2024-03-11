@@ -268,14 +268,15 @@ export default class Backgrounds {
 	 */
 	update( includeAll = false ) {
 
+		let config = this.Reveal.getConfig();
 		let currentSlide = this.Reveal.getCurrentSlide();
 		let indices = this.Reveal.getIndices();
 
 		let currentBackground = null;
 
 		// Reverse past/future classes when in RTL mode
-		let horizontalPast = this.Reveal.getConfig().rtl ? 'future' : 'past',
-			horizontalFuture = this.Reveal.getConfig().rtl ? 'past' : 'future';
+		let horizontalPast = config.rtl ? 'future' : 'past',
+			horizontalFuture = config.rtl ? 'past' : 'future';
 
 		// Update the classes of all backgrounds to match the
 		// states of their slides (past/present/future)
@@ -326,6 +327,11 @@ export default class Backgrounds {
 
 			this.Reveal.slideContent.stopEmbeddedContent( this.previousBackground, { unloadIframes: !this.Reveal.slideContent.shouldPreload( this.previousBackground ) } );
 
+			// Clear the previous background if it was removed from DOM
+			if( !this.previousBackground.closest( 'body' ) ) {
+				this.previousBackground = null;
+			}
+
 		}
 
 		// Start content in the current background
@@ -368,8 +374,9 @@ export default class Backgrounds {
 						previousVideoParent.appendChild( currentVideo );
 						currentVideoParent.appendChild( previousVideo );
 
-						// Resume playing if the previous video was playing
-						previousVideo.play();
+						if( config.autoPlayMedia !== false ) {
+							previousVideo.play();
+						}
 					}
 				}
 			}
