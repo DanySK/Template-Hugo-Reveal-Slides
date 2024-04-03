@@ -1,4 +1,4 @@
- 
+
 +++
 
 title = "Guide for writing markdown slides"
@@ -61,7 +61,7 @@ normal text
 
 # Inline images
 
-![Alternative text](https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg)
+![Alternative text](https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg)
 
 ---
 
@@ -72,7 +72,7 @@ Autoresize specifying
 * `max-w` (percent of parent element width) and/or `max-h` (percent of viewport height) as max sizes , and
 * `width` and/or `height` as *exact* sizes (as percent of viewport size)
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="20">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="20">}}
 
 ---
 
@@ -179,72 +179,72 @@ Column 2
 
 ## Low res, plain markdown
 
-![](https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg)
 
 ---
 
 ## Hi res, plain markdown
 
-![](https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg)
 
 ---
 
 ## Low res, default
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" >}}
 
 ---
 
 ## Hi res, default
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" >}}
 
 ---
 
 ## Low res, enlarged horizontally
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" width="100">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" width="100">}}
 
 ---
 
 ## Low res, enlarged vertically
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" height="100">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" height="100">}}
 
 ---
 
 ## Hi res, reduced horizontally
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" width="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" width="50">}}
 
 ---
 
 ## Hi res, reduced vertically
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="50">}}
 
 ---
 
 ## Hi res, reducing maximum expansion horizontally
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" width="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" width="50">}}
 
 ---
 
 ## Hi res, reducing maximum expansion vertically
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" height="50">}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="50">}}
 
 ---
 
-{{< slide background-image="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" >}}
+{{< slide background-image="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" >}}
 
 # Large images as background
 ## (May affect printing)
 
 ---
 
-{{< slide background-image="https://upload.wikimedia.org/wikipedia/it/6/6c/Scavolino_innevata.jpg" state="blur-animation-light"  transition="fade-in fade-out" >}}
+{{< slide background-image="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" state="blur-animation-light"  transition="fade-in fade-out" >}}
 
 # Also available with blur and custom transitions
 ## (May affect printing)
@@ -256,7 +256,7 @@ Column 2
 
 Inline equations like $E=mc^2$
 
-$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$  
+$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
 
 ---
 
@@ -269,9 +269,9 @@ val x = pippo
 
 ```go
 package main
- 
+
 import "fmt"
- 
+
 func main() {
     fmt.Println("Hello world!")
 }
@@ -290,7 +290,7 @@ Colons can be used to align columns.
 | zebra stripes | are neat      |    $1 |
 
 There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
+The outer pipes (|) are optional, and you don't need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
 ---
@@ -359,7 +359,6 @@ classDiagram
   Class08 <--> C2: Cool label
 ```
 
-
 ---
 
 
@@ -391,7 +390,7 @@ classDiagram
 graph TD
   SL([fa:fa-user second level]) --> L[solution]
   L -- solution email --> db[(mysql)]
-  db --> X[automatic] 
+  db --> X[automatic]
   X --> CM([fa:fa-users first level])
   db -- Email --> c([customer support]);
 ```
@@ -416,7 +415,14 @@ gitGraph
 
 ---
 
-# Import of shared slides
+# Keystrokes
 
-{{% import path="shared-slides/devops/devops-intro.md" %}}
+<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd>
 
+---
+
+# Import shared slides
+
+<!-- write-here "shared-slides/devops/devops-intro.md" -->
+
+<!-- end-write -->
