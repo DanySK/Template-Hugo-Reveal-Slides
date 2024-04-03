@@ -49,6 +49,7 @@ $headingFontWeight: 600;
 $linkColor: #2690e7;
 $linkColorHover: lighten( $linkColor, 25% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
+$detailBackgroundColor: #dae5e9;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
@@ -103,6 +104,10 @@ section.has-light-background {
 
 .reveal ul {
 	margin: .2em .2em .2em;
+}
+
+.reveal li li {
+	font-size: 80%;
 }
 
 .gist-it-gist .gist-file .gist-data pre, .gister-gist .gist-file .gist-data pre {
@@ -227,3 +232,27 @@ kbd {
 	display: flex;
 	justify-content: center;
 }
+
+
+.reveal .slide-background {
+	background-color: $backgroundColor;
+	background-image: url("../example-background-neg.svg");
+	background-repeat: no-repeat;
+	background-position: 0.45% 99.2%;
+	background-size: 15%;
+	background-clip: border-box;
+	border-radius: 30px;
+	border-style: solid;
+	border-color: $detailBackgroundColor;
+	border-width: 0.3em;
+}
+
+.reveal .slide-background:after {
+	content: "Authors - Title - Venue Year";
+	position: absolute;
+	bottom: 2.5%;
+	right: 6%;
+	z-index: -1;
+	color: $detailBackgroundColor;
+	font-size: .8em;
+  }

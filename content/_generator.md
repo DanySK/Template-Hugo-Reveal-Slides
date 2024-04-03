@@ -424,5 +424,4 @@ gitGraph
 # Import shared slides
 
 <!-- write-here "shared-slides/devops/devops-intro.md" -->
-
 <!-- end-write -->
