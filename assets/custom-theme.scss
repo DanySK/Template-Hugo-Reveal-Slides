@@ -98,9 +98,26 @@ section.has-light-background {
 	color: black;
 }
 
+// HEADERS
+
+.reveal h1 {
+	text-transform: none;
+}
+
+.reveal h2 {
+	text-transform: none;
+}
+
 .reveal h3 {
+	text-transform: none;
 	margin: .5em 0 0;
 }
+
+.reveal h4 {
+	text-transform: none;
+}
+
+// LISTS
 
 .reveal ul {
 	margin: .2em .2em .2em;
