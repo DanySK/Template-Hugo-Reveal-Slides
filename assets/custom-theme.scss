@@ -50,6 +50,7 @@ $linkColor: #2690e7;
 $linkColorHover: lighten( $linkColor, 25% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 $detailBackgroundColor: #dae5e9;
+$logo: url("../example-background-neg.svg");
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
@@ -59,11 +60,13 @@ $heading4Size: 1.0em;
 @import "reveal-js/dist/theme/template/theme";
 
 section.has-light-background {
+	$detailBackgroundColor: #bd2b0b !global;
+	$logo: url("../example-background.svg") !global;
+
 	&, h1, h2, h3, h4, h5, h6 {
 		color: #222;
 	}
 }
-
 .reveal pre {
 	margin: 1em auto;
 }
@@ -250,10 +253,9 @@ kbd {
 	justify-content: center;
 }
 
-
 .reveal .slide-background {
 	background-color: $backgroundColor;
-	background-image: url("../example-background-neg.svg");
+	background-image: $logo;
 	background-repeat: no-repeat;
 	background-position: 0.45% 99.2%;
 	background-size: 15%;
