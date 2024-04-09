@@ -275,3 +275,25 @@ kbd {
 	color: $detailBackgroundColor;
 	font-size: .8em;
   }
+
+
+  // Multicolumn styling
+
+  .reveal div.col {
+	// draw a red border
+	// border: 1px solid red;
+	text-align: left;
+	border: .2em dashed $detailBackgroundColor;
+	border-style: double;
+	border-radius: 1em;
+	padding: 0.5em;
+}
+
+.reveal div.container {
+	// border: 1px solid red;
+	align-self: center;
+	min-width: 90%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-top: 1em;
+}
