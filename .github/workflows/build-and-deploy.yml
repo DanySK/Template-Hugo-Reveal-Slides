@@ -58,7 +58,7 @@ jobs:
       #     NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
       #     SSH_PASS: ${{ secrets.SSH_PASS }}
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.174.0
+        uses: ruby/setup-ruby@v1.175.0
         with:
           working-directory: shared-slides
       - name: Run the preprocessor
