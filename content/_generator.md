@@ -88,8 +88,8 @@ Column 2
 
 ## Tick and Cross
 
-{{% tick %}} This is something good {{% /tick %}}
-{{% cross %}} This is something good {{% /cross %}}
+* {{% tick %}} This is something good
+* {{% cross %}} This is something bad
 
 ---
 
