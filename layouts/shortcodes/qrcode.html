@@ -1,0 +1,32 @@
+{{- $style := .Get "style" | default "" -}}
+{{- $width := .Get "width" | default 300 -}}
+{{- $height := .Get "height" | default 300 -}}
+{{- $data := .Get "data" | printf "%s" | safeJS -}}
+{{- $seed := sha256 $data | base64Encode -}}
+{{- $image := .Get "image" | default "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" -}}
+{{- $dotsColor := .Get "dotsColor" | default "#000000" -}}
+{{- $dotsType := .Get "dotsType" | default "rounded" -}}
+{{- $backgroundColor := .Get "backgroundColor" | default "#ffffff" -}}
+{{- $margin := .Get "margin" | default 10 -}}
+<div id="{{ $seed }}" style="{{ .Get "style" }}"></div>
+<script type="text/javascript">
+    const qrCode = new QRCodeStyling({
+        width: {{ $width }},
+        height: {{ $height }},
+        type: "svg",
+        data: {{ $data | printf "%s" }},
+        image: {{ $image  | printf "%s" }},
+        dotsOptions: {
+            color: "{{ $dotsColor }}",
+            type: "{{ $dotsType }}"
+        },
+        backgroundOptions: {
+            color: "{{ $backgroundColor }}",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: {{ $margin }}
+        }
+    });
+    qrCode.append(document.getElementById("{{ $seed }}"));
+</script>

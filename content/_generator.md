@@ -421,6 +421,12 @@ gitGraph
 
 ---
 
+# QR code
+
+{{% qrcode data="https://www.google.com" %}}
+
+---
+
 # Import shared slides
 
 <!-- write-here "shared-slides/devops/devops-intro.md" -->
