@@ -189,54 +189,6 @@ Column 2
 
 ---
 
-## Low res, default
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" >}}
-
----
-
-## Hi res, default
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" >}}
-
----
-
-## Low res, enlarged horizontally
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" width="100">}}
-
----
-
-## Low res, enlarged vertically
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Scavolino_innevata.jpg/260px-Scavolino_innevata.jpg" height="100">}}
-
----
-
-## Hi res, reduced horizontally
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" width="50">}}
-
----
-
-## Hi res, reduced vertically
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="50">}}
-
----
-
-## Hi res, reducing maximum expansion horizontally
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" width="50">}}
-
----
-
-## Hi res, reducing maximum expansion vertically
-
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" height="50">}}
-
----
-
 {{< slide background-image="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" >}}
 
 # Large images as background
@@ -244,10 +196,10 @@ Column 2
 
 ---
 
-{{< slide background-image="https://upload.wikimedia.org/wikipedia/commons/6/6c/Scavolino_innevata.jpg" state="blur-animation-light"  transition="fade-in fade-out" >}}
 
-# Also available with blur and custom transitions
-## (May affect printing)
+{{< slide background-video="https://github.com/DanySK/slides-2024-acsos-imageonomics/raw/master/content/nonnadir.mkv" background-video-loop="true" background-video-muted="true" background-opacity="0.95">}}
+
+# Video background
 
 ---
 
