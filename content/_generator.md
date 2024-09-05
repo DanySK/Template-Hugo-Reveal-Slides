@@ -84,6 +84,16 @@ Column 1
 Column 2
 {{% /col %}}{{% /multicol %}}
 
+{{% multicol %}}
+{{% col class="col-8" %}}
+Larger columns using bootstrap
+{{% /col %}}
+{{% col %}}
+[Link to bootstrap grid system](https://getbootstrap.com/docs/4.0/layout/grid/)
+{{% /col %}}
+{{% /multicol %}}
+
+
 ---
 
 ## Tick and Cross
@@ -267,6 +277,45 @@ raw Markdown line up prettily. You can also use inline Markdown.
 * {{< frag c="pluto" >}}
 * {{< frag c="pluto" >}}
 * {{< frag c="pluto" >}}
+
+---
+
+# Stacking images with Fragments
+{{% multicol %}}
+{{% col %}}
+<p class="fragment" data-fragment-index="0">Pippo</p>
+<p class="fragment" data-fragment-index="1">Pluto</p>
+<p class="fragment" data-fragment-index="2">Paperino</p>
+{{%/ col %}}
+
+{{% col %}}
+<div class="r-stack">
+  <img
+    class="fragment current-visible"
+    data-fragment-index="0"
+    src="https://www.topolino.it/wp-content/uploads/2019/12/pippointera.png"
+    width="450"
+    height="300"
+  />
+  <img
+    class="fragment current-visible"
+    data-fragment-index="1"
+    src="https://www.topolino.it/wp-content/uploads/2019/12/plutointera.png"
+    width="300"
+    height="450"
+  />
+  <img
+    class="fragment current-visible"
+    data-fragment-index="2"
+    src="https://it.wikifur.com/w/images/thumb/6/6f/Donald_Duck.png/362px-Donald_Duck.png"
+    width="400"
+    height="400"
+  />
+</div>
+{{%/ col %}}
+
+{{%/ multicol %}}
+
 
 ---
 
