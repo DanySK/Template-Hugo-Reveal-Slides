@@ -1,12 +1,10 @@
-{{- $token := os.Getenv "GITHUB_TOKEN" -}}
-{{- $token := cond (gt ($token | len) 1) (dict "Authorization" $token "Accept" "application/json") "" -}}
-{{- $owner := .Get "owner" | default "DanySK" -}}
-{{- $repo := .Get "repo" | default "Template-Hugo-Reveal-Slides" -}}
-{{- $path := .Get "path" | default "LICENSE" -}}
+{{- $owner := .Get "owner" | default "unibo-spe" -}}
+{{- $repo := .Get "repo" | default "spe-slides" -}}
+{{- $path := .Get "path" | default "README.md" -}}
 {{- $branch := .Get "branch" | default "master" -}}
-{{- $json := getJSON "https://api.github.com/repos/" $owner "/" $repo "/contents/" $path "?ref=" $branch $token -}}
-{{- $content := $json.content | base64Decode | htmlUnescape -}}
-{{- $content := split $content "\n" -}}
+{{- $url := printf "https://raw.githubusercontent.com/%s/%s/%s/%s" $owner $repo $branch $path -}}
+{{- $data := resources.GetRemote $url -}}
+{{- $content := split $data.Content "\n" -}}
 {{- $start := .Get "from" | default "1" | int | add -1 }}
 {{- $end := .Get "to" | default (len $content) | int }}
 {{- $end := sub $end $start }}
