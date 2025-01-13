@@ -15,7 +15,10 @@ export default {
 	minScale: 0.2,
 	maxScale: 2.0,
 
-	// Display presentation control arrows
+	// Display presentation control arrows.
+	// - true: Display controls on all screens
+	// - false: Hide controls on all screens
+	// - "speaker-only": Only display controls in the speaker view
 	controls: true,
 
 	// Help the user learn the controls by providing hints, for example by
