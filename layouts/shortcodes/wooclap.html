@@ -1,0 +1,27 @@
+{{- $id := .Get "id" -}}
+{{- $height := .Get "height" | default 800 -}}
+<iframe
+    id="wooclap-{{- $id -}}"
+    allowfullscreen frameborder="0"
+    height="100%"
+    mozallowfullscreen
+    style="min-width: 500px;
+    min-height: {{- $height -}}px"
+    src="https://app.wooclap.com/events/MINRHT/questions/{{- $id -}}"
+    width="100%"
+></iframe>
+
+<script>
+    if (/.*?([?&])print-pdf/.test(window.location.toString())) {
+        console.log("Printing detected. Disabling wooclap.")
+        let toDisable = document.getElementById("wooclap-{{- $id -}}");
+        let parent = toDisable.parentElement;
+        toDisable.remove()
+        let replacement = document.createTextNode(
+            "There was a Wooclap pool here, but they get disabled when printing.\
+            You might be able to retrieve the results at:\
+            https://app.wooclap.com/events/MINRHT/questions/{{- $id -}}"
+        );
+        parent.appendChild(replacement)
+    }
+</script>
