@@ -10,8 +10,11 @@ export default class Overlay {
 
 		this.onSlidesClicked = this.onSlidesClicked.bind( this );
 
-		this.linkPreviewSelector = null;
-		this.mediaPreviewSelector = '[data-preview-image], [data-preview-video]';
+		this.iframeTriggerSelector = null;
+		this.mediaTriggerSelector = '[data-preview-image], [data-preview-video]';
+
+		this.stateProps = ['previewIframe', 'previewImage', 'previewVideo', 'previewFit'];
+		this.state = {};
 
 	}
 
@@ -19,18 +22,18 @@ export default class Overlay {
 
 		// Enable link previews globally
 		if( this.Reveal.getConfig().previewLinks ) {
-			this.linkPreviewSelector = 'a[href]:not([data-preview-link=false]), [data-preview-link]:not(a):not([data-preview-link=false])';
+			this.iframeTriggerSelector = 'a[href]:not([data-preview-link=false]), [data-preview-link]:not(a):not([data-preview-link=false])';
 		}
 		// Enable link previews for individual elements
 		else {
-			this.linkPreviewSelector = '[data-preview-link]:not([data-preview-link=false])';
+			this.iframeTriggerSelector = '[data-preview-link]:not([data-preview-link=false])';
 		}
 
-		this.hasLinkPreviews = this.Reveal.getSlidesElement().querySelectorAll( this.linkPreviewSelector ).length > 0;
-		this.hasMediaPreviews = this.Reveal.getSlidesElement().querySelectorAll( this.mediaPreviewSelector ).length > 0;
+		const hasLinkPreviews = this.Reveal.getSlidesElement().querySelectorAll( this.iframeTriggerSelector ).length > 0;
+		const hasMediaPreviews = this.Reveal.getSlidesElement().querySelectorAll( this.mediaTriggerSelector ).length > 0;
 
 		// Only add the listener when there are previewable elements in the slides
-		if( this.hasLinkPreviews || this.hasMediaPreviews ) {
+		if( hasLinkPreviews || hasMediaPreviews ) {
 			this.Reveal.getSlidesElement().addEventListener( 'click', this.onSlidesClicked, false );
 		}
 		else {
@@ -54,13 +57,15 @@ export default class Overlay {
 	}
 
 	/**
-	 * Opens a preview window for the target URL.
+	 * Opens a lightbox that previews the target URL.
 	 *
-	 * @param {string} url - url for preview iframe src
+	 * @param {string} url - url for lightbox iframe src
 	 */
-	showIframePreview( url ) {
+	previewIframe( url ) {
 
 		this.close();
+
+		this.state = { previewIframe: url };
 
 		this.createOverlay( 'r-overlay-preview' );
 		this.dom.dataset.state = 'loading';
@@ -91,20 +96,19 @@ export default class Overlay {
 			this.close();
 		}, false );
 
-		this.Reveal.dispatchEvent({ type: 'showiframepreview', data: { url } });
+		this.Reveal.dispatchEvent({ type: 'previewiframe', data: { url } });
 
 	}
 
 	/**
-	 * Opens a preview window that provides a larger view of the
+	 * Opens a lightbox window that provides a larger view of the
 	 * given image/video.
 	 *
 	 * @param {string} url - url to the image/video to preview
 	 * @param {image|video} mediaType
-	 * @param {HTMLElement} [trigger] - the element that triggered
-	 * the preview
+	 * @param {string} [fitMode] - the fit mode to use for the preview
 	 */
-	showMediaPreview( url, mediaType, trigger ) {
+	previewMedia( url, mediaType, fitMode ) {
 
 		if( mediaType !== 'image' && mediaType !== 'video' ) {
 			console.warn( 'Please specify a valid media type to preview (image|video)' );
@@ -113,9 +117,11 @@ export default class Overlay {
 
 		this.close();
 
+		fitMode = fitMode || 'scale-down';
+
 		this.createOverlay( 'r-overlay-preview' );
 		this.dom.dataset.state = 'loading';
-		this.dom.dataset.previewFit = trigger ? trigger.dataset.previewFit || 'scale-down' : 'scale-down';
+		this.dom.dataset.previewFit = fitMode;
 
 		this.viewport.innerHTML =
 			`<header class="r-overlay-header">
@@ -127,6 +133,8 @@ export default class Overlay {
 		const contentElement = this.dom.querySelector( '.r-overlay-content' );
 
 		if( mediaType === 'image' ) {
+
+			this.state = { previewImage: url, previewFit: fitMode }
 
 			const img = document.createElement( 'img', {} );
 			img.src = url;
@@ -148,8 +156,12 @@ export default class Overlay {
 				this.close();
 			}, false );
 
+			this.Reveal.dispatchEvent({ type: 'previewimage', data: { url } });
+
 		}
 		else if( mediaType === 'video' ) {
+
+			this.state = { previewVideo: url, previewFit: fitMode }
 
 			const video = document.createElement( 'video' );
 			video.autoplay = this.dom.dataset.previewAutoplay === 'false' ? false : true;
@@ -170,6 +182,8 @@ export default class Overlay {
 					`<span class="r-overlay-error">Unable to load video.</span>`;
 			}, false );
 
+			this.Reveal.dispatchEvent({ type: 'previewvideo', data: { url } });
+
 		}
 		else {
 			throw new Error( 'Please specify a valid media type to preview' );
@@ -180,7 +194,17 @@ export default class Overlay {
 			event.preventDefault();
 		}, false );
 
-		this.Reveal.dispatchEvent({ type: 'showmediapreview', data: { mediaType, url, trigger } });
+	}
+
+	previewImage( url, fitMode ) {
+
+		this.previewMedia( url, 'image', fitMode );
+
+	}
+
+	previewVideo( url, fitMode ) {
+
+		this.previewMedia( url, 'video', fitMode );
 
 	}
 
@@ -257,7 +281,9 @@ export default class Overlay {
 	}
 
 	isOpen() {
+
 		return !!this.dom;
+
 	}
 
 	/**
@@ -268,6 +294,11 @@ export default class Overlay {
 		if( this.dom ) {
 			this.dom.remove();
 			this.dom = null;
+
+			this.state = {};
+
+			this.Reveal.dispatchEvent({ type: 'closeoverlay' });
+
 			return true;
 		}
 
@@ -275,27 +306,60 @@ export default class Overlay {
 
 	}
 
+	getState() {
+
+		return this.state;
+
+	}
+
+	setState( state ) {
+
+		// Ignore the incoming state if none of the preview related
+		// props have changed
+		if( this.stateProps.every( key => this.state[ key ] === state[ key ] ) ) {
+			return;
+		}
+
+		if( state.previewIframe ) {
+			this.previewIframe( state.previewIframe );
+		}
+		else if( state.previewImage ) {
+			this.previewImage( state.previewImage, state.previewFit );
+		}
+		else if( state.previewVideo ) {
+			this.previewVideo( state.previewVideo, state.previewFit );
+		}
+		else {
+			this.close();
+		}
+
+	}
+
 	onSlidesClicked( event ) {
 
 		const target = event.target;
 
-		const linkTarget = target.closest( this.linkPreviewSelector );
-		const mediaTarget = target.closest( this.mediaPreviewSelector );
+		const linkTarget = target.closest( this.iframeTriggerSelector );
+		const mediaTarget = target.closest( this.mediaTriggerSelector );
 
-		// Was a link preview clicked?
+		// Was an iframe lightbox trigger clicked?
 		if( linkTarget ) {
+			if( event.metaKey || event.shiftKey || event.altKey ) {
+				// Let the browser handle meta keys naturally so users can cmd+click
+				return;
+			}
 			let url = linkTarget.getAttribute( 'href' ) || linkTarget.getAttribute( 'data-preview-link' );
 			if( url ) {
-				this.showIframePreview( url );
+				this.previewIframe( url );
 				event.preventDefault();
 			}
 		}
-		// Was a media preview clicked?
+		// Was a media lightbox trigger clicked?
 		else if( mediaTarget ) {
 			if( mediaTarget.hasAttribute( 'data-preview-image' ) ) {
 				let url = mediaTarget.dataset.previewImage || mediaTarget.getAttribute( 'src' );
 				if( url ) {
-					this.showMediaPreview( url, 'image', mediaTarget );
+					this.previewImage( url, mediaTarget.dataset.previewFit );
 					event.preventDefault();
 				}
 			}
@@ -308,7 +372,7 @@ export default class Overlay {
 					}
 				}
 				if( url ) {
-					this.showMediaPreview( url, 'video', mediaTarget );
+					this.previewVideo( url, mediaTarget.dataset.previewFit );
 					event.preventDefault();
 				}
 			}
