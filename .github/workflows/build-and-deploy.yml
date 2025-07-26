@@ -50,7 +50,7 @@ jobs:
           css-file-regex: '^css\\/.*custom.*theme.*\\.css$'
       - name: Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v8
+        uses: tj-actions/branch-names@v9
       - name: Deploy website
         if: ${{ github.event_name != 'pull_request' && steps.branch-name.outputs.is_default == 'true' }}
         uses: JamesIves/github-pages-deploy-action@v4.7.3
