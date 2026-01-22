@@ -25,7 +25,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout
-        uses: danysk/action-checkout@0.2.27
+        uses: danysk/action-checkout@0.2.28
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3.0.0
         with:
