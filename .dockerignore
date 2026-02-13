@@ -1,0 +1,26 @@
+# Build output
+build/
+
+# Git
+.git
+.gitmodules
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# CI / misc
+.github/
+.circleci/
+LICENSE
+README.md
+renovate.json
