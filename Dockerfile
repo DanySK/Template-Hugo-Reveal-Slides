@@ -1,4 +1,4 @@
-FROM alpine:3.22
+FROM alpine:3.23
 ARG UID=1000
 ARG GID=1000
 RUN apk add --no-cache hugo ruby git inotify-tools
