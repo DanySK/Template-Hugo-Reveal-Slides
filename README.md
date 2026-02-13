@@ -6,7 +6,7 @@
 ./shared-slides/serve.sh
 ```
 
-### Other OS
+### Other OSs
 
 ```bash
 docker compose up -d --build
