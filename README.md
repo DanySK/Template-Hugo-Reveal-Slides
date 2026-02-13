@@ -6,8 +6,8 @@
 ./shared-slides/serve.sh
 ```
 
-### Other
+### Other OSs
 
 ```bash
-UID=`id -u` GID=`id -g` docker compose up --build
+docker compose up -d --build
 ```

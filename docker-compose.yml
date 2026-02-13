@@ -1,14 +1,17 @@
 services:
   hugo:
-    build: 
+    build:
       context: .
       tags:
         - hugo-slides-server
       args:
-        UID: ${UID}
-        GID: ${GID}
+        UID: 1000
+        GID: 1000
     volumes:
-      - .:/data
+      - ./content:/data/content
+      - ./shared-slides:/data/shared-slides
+      - ./config.toml:/data/config.toml
+      - ./assets:/data/assets
+      - ./layouts:/data/layouts
     ports:
-      - 1313:1313
-    command: sh /data/shared-slides/serve.sh
+      - "1313:1313"
