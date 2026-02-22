@@ -13,5 +13,8 @@ services:
       - ./config.toml:/data/config.toml
       - ./assets:/data/assets
       - ./layouts:/data/layouts
+      - ./static:/data/static
+      - ./themes:/data/themes
+      - ./archetypes:/data/archetypes
     ports:
       - "1313:1313"
