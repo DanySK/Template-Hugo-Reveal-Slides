@@ -7,3 +7,50 @@
 
 <script src="https://kit.fontawesome.com/81ac037be0.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+<script>
+    // reveal.js scales `.slides` with a CSS transform, but mermaid sizes the label boxes using
+    // getBoundingClientRect, which includes that transform: diagrams rendered in place get boxes
+    // smaller than their labels, which end up cut. Render them instead in a hidden box that sits in
+    // `.reveal` (same fonts) but outside of `.slides` (no scaling), then move the SVG into the slide.
+    // `window.mermaid` is intercepted because the theme renders the current slide as soon as
+    // mermaid is loaded, before any later hook can run.
+    (function () {
+        let instance;
+        let counter = 0;
+        Object.defineProperty(window, 'mermaid', {
+            configurable: true,
+            get: () => instance,
+            set: (mermaid) => {
+                instance = mermaid;
+                mermaid.init = async function (config, element) {
+                    if (!(element instanceof Element) || element.getAttribute('data-processed')) {
+                        return;
+                    }
+                    element.setAttribute('data-processed', 'true');
+                    const style = getComputedStyle(element);
+                    const sandbox = document.createElement('div');
+                    sandbox.style.cssText = 'position: absolute; top: 0; left: 0; visibility: hidden;';
+                    for (const property of ['font-family', 'font-size', 'font-weight', 'letter-spacing']) {
+                        sandbox.style.setProperty(property, style.getPropertyValue(property));
+                    }
+                    // computed line heights are absolute: turn them back into a ratio, labels use their own font size
+                    const lineHeight = parseFloat(style.lineHeight) / parseFloat(style.fontSize);
+                    if (lineHeight) {
+                        sandbox.style.lineHeight = lineHeight;
+                    }
+                    (document.querySelector('.reveal') || document.body).appendChild(sandbox);
+                    try {
+                        const { svg, bindFunctions } = await mermaid.render(`mermaid-live-${counter++}`, element.textContent, sandbox);
+                        element.innerHTML = svg;
+                        if (bindFunctions) {
+                            bindFunctions(element);
+                        }
+                    } finally {
+                        sandbox.remove();
+                    }
+                };
+            },
+        });
+    })();
+</script>
