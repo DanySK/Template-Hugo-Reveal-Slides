@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: danysk/action-checkout@0.2.31
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3.2.1
+        uses: peaceiris/actions-hugo@v3.3.0
         with:
           hugo-version: 0.169.0
           extended: true
