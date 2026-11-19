@@ -8,7 +8,7 @@ ARG TARGETARCH
 # renovate: datasource=github-releases depName=gohugoio/hugo
 ARG HUGO_VERSION=0.170.1
 # renovate: datasource=github-releases depName=sass/dart-sass
-ARG DART_SASS_VERSION=1.105.1
+ARG DART_SASS_VERSION=1.105.2
 RUN apk add --no-cache ruby git inotify-tools
 RUN case "${TARGETARCH:-amd64}" in \
         amd64) SASS_ARCH=x64 ;; \
