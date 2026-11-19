@@ -49,6 +49,16 @@ enableSourceMap = true
 # theme = "default"
 # fontFamily = "Inconsolata"
 # useMaxWidth = false
+# mermaid >= 12 defaults to the "neo" look: classic nodes fit their labels more tightly
+look = "classic"
+
+[params.reveal_hugo.mermaid.flowchart]
+# orthogonal edges with rounded corners
+curve = "rounded"
+# mermaid >= 12 defaults to 120px: nodes would be much larger than their labels
+minNodeWidth = 0
+# mermaid >= 12 defaults to 120px, wrapping labels that fit on one line in previous versions
+wrappingWidth = 200
 
 # gitGraph options break the image generation
 # [params.reveal_hugo.mermaid.gitGraph]
